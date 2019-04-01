@@ -1,3 +1,14 @@
-#calulator-border{
-	width: 500px;
+#calculator-border{
+	margin-top: 10px;
+	width: 140px;
+	background-color: tan;
+	height: 205px;
+	border-radius: 5px;
+	
 }
+#resultsDisplay {
+	background-color: grey;
+}
+#top{
+	margin-top: 5px;
+} 

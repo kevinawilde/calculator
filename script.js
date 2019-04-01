@@ -29,10 +29,30 @@ var number = function(elem, calculate) {
 	return calculate;
 };
 var operator = function(operation, calculate){
-	calculate.waiting = true;
-	calculate.operator = operation;
-	clearDisplay();
-	return calculate;
+	if(calculate.waiting == true){
+		if(calculate.operator == "+"){
+			calculate.firstNumber = calculate.firstNumber + calculate.secondNumber;
+		}
+		if(calculate.operator == "-"){
+			calculate.firstNumber = calculate.firstNumber - calculate.secondNumber;
+		}
+		if(calculate.operator == "*"){
+			calculate.firstNumber = calculate.firstNumber * calculate.secondNumber;
+		}
+		if(calculate.operator == "/"){
+			calculate.firstNumber = calculate.firstNumber / calculate.secondNumber;
+		}
+		calculate.secondNumber = 0;
+		calculate.operator = operation;
+		clearDisplay();
+		return calculate;
+
+	} else{
+		calculate.waiting = true;
+		calculate.operator = operation;
+		clearDisplay();
+		return calculate;
+	}
 };
 var calculation= function(calculate){
 	if (calculate.operator == '+'){
